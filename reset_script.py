@@ -12,7 +12,6 @@ OrderItem.objects.all().delete()
 my_dict = supplier.getProductsList()
 for item in my_dict:
     p = Product(EAN_13=item['EAN_13'],
-                order_id=item['id'],
                 name=item['name'],
                 vat_rate=item['vat_rate'],
                 price_in_cents=item['price_in_cents'],
