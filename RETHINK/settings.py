@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-gt04of7b3osqa$^mi+d-c4z%@5f^&p2-cyk6*m$52yat@l#quq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True 
+DEBUG = False 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['rethink-supermarket.herokuapp.com/', '127.0.0.1']
 
 
 # Application definition

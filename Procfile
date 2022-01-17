@@ -1,0 +1,1 @@
+web: gunicorn RETHINK.wsgi --log-file -
