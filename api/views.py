@@ -25,6 +25,12 @@ def getRoutes(request):
             'body': {'body': ""},
             'description': 'Creates a new empty cart from id'
         },
+        {
+            'Endpoint': '/orders/',
+            'method': 'GET',
+            'body': None,
+            'description': 'Returns all orders'
+        },
     ]
     return Response(routes)
 
@@ -50,12 +56,12 @@ def getOrders(request):
     serializer = OrderSerializer(orders, many=True)
     return Response(serializer.data)
 
-def createOrderItem(data: dict, order: Order):
-    for key in data.keys():
+def createOrderItem(data: list, order: Order):
+    for item in data:
         order_item = OrderItem.objects.create(
             order_id=order,
-            item_id=Product.objects.get(EAN_13=data[key]['item_id']),
-            amount=data[key]['amount']
+            item_id=Product.objects.get(EAN_13=item['item_id']),
+            amount=item['amount']
         )
         restock.update_stock(order_item)
         
