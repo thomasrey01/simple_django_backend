@@ -4,7 +4,7 @@ from requests.models import Response
 
 from api.models import Product
 
-token = '290899a9b41a2a33dfc0914ba23277e5869a4f01'
+token = "TOKEN HERE"
 head = {'Authorization': 'Token {}'.format(token)}
 
 def getUser():
